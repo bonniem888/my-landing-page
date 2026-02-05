@@ -37,6 +37,7 @@
 
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
       font-family: "Chromatophore", "Figtree", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -46,26 +47,24 @@
         radial-gradient(800px 500px at 60% 90%, rgba(251,113,133,.18), transparent 55%),
         var(--bg);
       color:var(--text);
-      line-height:1.5;
+      line-height:1.65;
       text-rendering: geometricPrecision;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 16px 110px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 130px}
 
     .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:10px 0 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:12px 0 22px;
       flex-wrap:wrap;
     }
-    .brand{
-      display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px;
-    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
     .badge{
       display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px; border:1px solid var(--line);
+      padding:10px 12px; border:1px solid var(--line);
       border-radius:999px; color:var(--muted);
       background: rgba(255,255,255,.03);
       font-size:13px;
@@ -76,7 +75,7 @@
       box-shadow: 0 0 0 4px rgba(240,80,248,.14);
     }
 
-    .stack{display:flex; flex-direction:column; gap:14px}
+    .stack{display:flex; flex-direction:column; gap:18px}
 
     .hero{
       border:1px solid var(--line);
@@ -85,12 +84,15 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .hero-inner{padding:26px}
+    .hero-inner{padding:34px}
+    @media (max-width: 520px){
+      .hero-inner{padding:26px}
+    }
 
     h1{
-      margin:14px 0 10px;
+      margin:0 0 14px;
       font-size:52px;
-      line-height:1.05;
+      line-height:1.08;
       letter-spacing:-.8px;
       font-weight:900;
       text-align:center;
@@ -100,50 +102,50 @@
     }
 
     .sub{
-      margin:0 auto;
+      margin:0 auto 16px;
       color:var(--muted);
       font-size:20.8px;
-      max-width: 70ch;
+      max-width: 68ch;
       font-weight:700;
       text-align:center;
     }
 
     .proof-row{
-      margin-top:16px;
-      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:18px;
+      display:flex; flex-wrap:wrap; gap:12px;
       justify-content:center;
     }
     .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:9px 12px;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 14px;
       border-radius:999px;
       background: rgba(255,255,255,.03);
       border:1px solid var(--line);
       color:var(--muted);
-      font-size:13px;
-      font-weight:700;
+      font-size:14px;
+      font-weight:800;
     }
     .pill strong{color:var(--text)}
     .star{color:#ffd166}
 
     .cta-centre{
-      margin-top:18px;
+      margin-top:22px;
       border:1px solid rgba(240,80,248,.35);
       background: rgba(240,80,248,.10);
       border-radius: 18px;
-      padding:16px;
+      padding:22px;
     }
     .cta-centre-inner{
       display:flex;
       flex-direction:column;
       align-items:center;
       text-align:center;
-      gap:10px;
+      gap:14px;
     }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:14px 16px;
+      padding:16px 18px;
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,.10);
       text-decoration:none;
@@ -151,25 +153,35 @@
       letter-spacing:.2px;
       transition: transform .06s ease, filter .2s ease;
       user-select:none;
-      white-space:nowrap;
+      white-space:normal;          /* allow wrapping */
+      text-align:center;           /* centred if wraps */
+      line-height:1.15;            /* tighter for wrap */
     }
     .btn:active{transform: translateY(1px)}
 
     .btn-primary{
-      width:min(560px, 100%);
+      width:min(600px, 100%);
       background: linear-gradient(90deg, var(--accent2), #c400d4);
       color:#1f0022;
       border-color: rgba(240,80,248,.45);
       box-shadow: 0 10px 30px rgba(240,80,248,.18);
-      padding:18px 20px;
+      padding:20px 22px;
       font-size:20.8px;
+    }
+
+    /* Ensure CTA text always fits nicely on small screens */
+    @media (max-width: 520px){
+      .btn-primary{
+        font-size:18px;      /* slightly smaller on mobile */
+        padding:18px 18px;
+      }
     }
 
     .micro{
       color:var(--muted);
-      font-size:13px;
+      font-size:14px;
       font-weight:700;
-      max-width: 80ch;
+      max-width: 78ch;
       margin:0 auto;
       text-align:center;
     }
@@ -178,29 +190,33 @@
       border:1px solid var(--line);
       border-radius: 16px;
       background: rgba(255,255,255,.03);
-      padding:16px;
+      padding:22px;
       box-shadow: var(--shadow);
     }
     .card h2{
-      margin:0 0 10px;
-      font-size:16px;
+      margin:0 0 12px;
+      font-size:18px;
       letter-spacing:-.2px;
       font-weight:900;
     }
-    .list{margin:0; padding-left:18px; color:var(--muted); font-weight:700}
-    .list li{margin:8px 0}
-    .list strong{color:var(--text)}
+    .list{
+      margin:0;
+      padding-left:20px;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .list li{margin:10px 0}
 
     .section{
       border:1px solid var(--line);
       border-radius: var(--radius);
       background: rgba(255,255,255,.03);
-      padding:18px;
+      padding:22px;
       box-shadow: var(--shadow);
     }
     .section h2{
-      margin:0 0 12px;
-      font-size:20px;
+      margin:0 0 14px;
+      font-size:22px;
       letter-spacing:-.3px;
       font-weight:900;
     }
@@ -208,7 +224,7 @@
     .cols{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
+      gap:14px;
     }
     @media (max-width: 920px){
       .cols{grid-template-columns:1fr}
@@ -217,47 +233,43 @@
     .step{
       border:1px solid var(--line);
       border-radius: 16px;
-      padding:14px;
+      padding:18px;
       background: rgba(0,0,0,.10);
     }
     .step .num{
-      width:34px; height:34px;
+      width:36px; height:36px;
       display:inline-flex; align-items:center; justify-content:center;
       border-radius: 12px;
       background: rgba(240,80,248,.16);
       border:1px solid rgba(240,80,248,.40);
       color:#ffe1ff;
       font-weight:900;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
-    .step h3{margin:0 0 6px; font-size:16px; font-weight:900}
-    .step p{margin:0; color:var(--muted); font-size:14px; font-weight:700}
+    .step h3{margin:0 0 8px; font-size:17px; font-weight:900}
+    .step p{margin:0; color:var(--muted); font-size:15px; font-weight:700}
 
     details{
       border:1px solid var(--line);
       border-radius: 16px;
-      padding:12px 14px;
+      padding:14px 16px;
       background: rgba(0,0,0,.10);
-      margin:10px 0;
+      margin:12px 0;
     }
-    summary{
-      cursor:pointer;
-      font-weight:900;
-      outline:none;
-    }
-    details p{margin:10px 0 0; color:var(--muted); font-weight:700}
+    summary{cursor:pointer; font-weight:900; outline:none}
+    details p{margin:12px 0 0; color:var(--muted); font-weight:700}
 
     .footer{
-      margin-top:6px;
+      margin-top:8px;
       color:var(--muted);
-      font-size:12px;
+      font-size:13px;
       font-weight:700;
     }
 
     .sticky{
       position:fixed;
       left:0; right:0; bottom:0;
-      padding:10px 12px;
+      padding:12px 14px;
       background: rgba(11,16,32,.82);
       backdrop-filter: blur(10px);
       border-top:1px solid var(--line);
@@ -267,11 +279,16 @@
       max-width:var(--max);
       margin:0 auto;
       display:flex;
-      gap:10px;
+      gap:12px;
       align-items:center;
       justify-content:space-between;
     }
-    .sticky .txt{color:var(--muted); font-size:12px; font-weight:900}
+    .sticky .txt{color:var(--muted); font-size:13px; font-weight:900}
+    @media (max-width: 520px){
+      .sticky .sticky-inner{flex-direction:column; align-items:stretch}
+      .sticky .txt{text-align:center}
+      .sticky a{width:100%}
+    }
   </style>
 </head>
 
@@ -280,7 +297,7 @@
     <div class="topbar">
       <div class="brand">
         <span style="width:12px;height:12px;border-radius:4px;background:var(--accent2);display:inline-block"></span>
-        <span>Octopus referral</span>
+        <span>Switch to Octopus</span>
       </div>
 
       <div class="badge">
@@ -292,9 +309,7 @@
     <div class="stack">
       <section class="hero">
         <div class="hero-inner">
-
           <h1>Get £50 when you switch to Octopus</h1>
-
           <p class="sub">Switch &amp; Save with the UK's biggest green energy supplier.</p>
 
           <div class="proof-row">
@@ -322,7 +337,7 @@
       </section>
 
       <section class="card">
-        <div class="card" style="box-shadow:none">
+        <div class="card" style="box-shadow:none; padding:0; border:none; background:transparent;">
           <h2>What you get</h2>
           <ul class="list">
             <li><strong>£50 referral bonus</strong> for you (if eligible, after the switch completes)</li>
@@ -332,9 +347,9 @@
           </ul>
         </div>
 
-        <div style="height:12px"></div>
+        <div style="height:16px"></div>
 
-        <div class="card" style="box-shadow:none">
+        <div class="card" style="box-shadow:none; padding:0; border:none; background:transparent;">
           <h2>Why this page exists</h2>
           <ul class="list">
             <li>One link, one action</li>
@@ -381,7 +396,7 @@
             <p>If the offer is active and you are eligible, it is a nice extra.</p>
           </div>
         </div>
-        <p class="micro" style="margin:12px 0 0">
+        <p class="micro" style="margin:16px 0 0">
           Keep this honest. If something changes, check the official referral terms before switching.
         </p>
       </section>
@@ -422,7 +437,7 @@
           <p>Some suppliers can add it after sign-up, some cannot. If you forget, contact support as soon as possible and ask.</p>
         </details>
 
-        <div class="cta-centre" style="margin-top:14px">
+        <div class="cta-centre" style="margin-top:18px">
           <div class="cta-centre-inner">
             <a class="btn btn-primary"
                href="https://tinyurl.com/4ankyuxd"
@@ -449,7 +464,7 @@
     <div class="sticky-inner">
       <div class="txt">Ready to switch and claim £50?</div>
       <a class="btn btn-primary"
-         style="padding:12px 14px"
+         style="padding:14px 16px; font-size:16px; width:auto"
          href="https://tinyurl.com/4ankyuxd"
          target="_blank"
          rel="noopener"
